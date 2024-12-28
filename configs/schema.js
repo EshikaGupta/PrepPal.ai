@@ -5,7 +5,6 @@ export const USER_TABLE=pgTable('users',{
     id:serial().primaryKey(),
     userName:varchar().notNull(),
     email:varchar().notNull(),
-    isMember:boolean().default(false),
     credits:integer().default(5),
 })
 
@@ -35,12 +34,5 @@ export const STUDY_TYPE_CONTENT_TABLE=pgTable('studyTypeContent',{
     content:json(),
     type:varchar().notNull(),
     status:varchar().default('Generating')
-    
-})
-
-export const PAYMENT_RECORD_TABLE=pgTable('paymentRecord',{
-    id:serial().primaryKey(),
-    customerId:varchar(),
-    sessionId:varchar()
     
 })
